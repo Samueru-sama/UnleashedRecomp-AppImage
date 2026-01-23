@@ -14,8 +14,6 @@ export DEPLOY_PIPEWIRE=1
 export DEPLOY_OPENGL=1
 export DEPLOY_VULKAN=1
 export PATH_MAPPING='
-	/usr/share/xdg-desktop-portal:${SHARUN_DIR}/share/xdg-desktop-portal
-	/usr/share/dbus-1:${SHARUN_DIR}/share/dbus-1
 	/usr/lib/xdg*:${SHARUN_DIR}/bin/xdg*
 '
 
