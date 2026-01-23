@@ -15,7 +15,12 @@ export DEPLOY_OPENGL=1
 export DEPLOY_VULKAN=1
 
 # Deploy dependencies
-quick-sharun /usr/bin/UnleashedRecomp
+quick-sharun \
+	/usr/bin/UnleashedRecomp              \
+	/usr/lib/xdg-*-portal*                \
+	/usr/share/dbus-1/interfaces/*portal* \
+	/usr/share/dbus-1/services/*portal*   \
+	/usr/share/xdg-desktop-portal
 
 # Additional changes can be done in between here
 
