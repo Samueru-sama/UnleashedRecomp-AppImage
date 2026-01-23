@@ -13,17 +13,18 @@ export DESKTOP=/usr/share/applications/io.github.hedge_dev.unleashedrecomp.deskt
 export DEPLOY_PIPEWIRE=1
 export DEPLOY_OPENGL=1
 export DEPLOY_VULKAN=1
+export PATH_MAPPING='
+	/usr/share/xdg-desktop-portal:${SHARUN_DIR}/share/xdg-desktop-portal
+	/usr/share/dbus-1:${SHARUN_DIR}/share/dbus-1
+	/usr/lib/xdg*:${SHARUN_DIR}/bin/xdg*
+'
 
 # Deploy dependencies
 quick-sharun \
 	/usr/bin/UnleashedRecomp      \
 	/usr/lib/xdg-*-portal*        \
-	/usr/share/dbus-1/interfaces  \
-	/usr/share/dbus-1/services    \
+	/usr/share/dbus-1             \
 	/usr/share/xdg-desktop-portal
-
-find ./AppDir/share/dbus-1/services -type f -exec sed -i -e 's|/usr/lib|./bin|g' {} \;
-echo 'SHARUN_WORKING_DIR=${SHARUN_DIR}' >> ./AppDir/.env
 
 # Turn AppDir into AppImage
 quick-sharun --make-appimage
