@@ -22,7 +22,8 @@ quick-sharun \
 	/usr/share/dbus-1/services    \
 	/usr/share/xdg-desktop-portal
 
-# Additional changes can be done in between here
+find ./AppDir/share/dbus-1/services -type f -exec sed -i -e 's|/usr/lib|./bin|g' {} \;
+echo 'SHARUN_WORKING_DIR=${SHARUN_DIR}' >> ./AppDir/.env
 
 # Turn AppDir into AppImage
 quick-sharun --make-appimage
